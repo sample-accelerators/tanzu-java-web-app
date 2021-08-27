@@ -9,8 +9,3 @@ spec:
   source:
     imgpkgBundle:
       image: harbor-repo.vmware.com/tanzu_desktop/sample-app-java-source
-      # This is an example, to push from source...
-      # tanzu apps workload update go-app  --yes --local-path ~/workspace/golang-sample-app/ --imgpkg-bundle=harbor-repo.vmware.com/tanzu_desktop/golang-sample-app
-      # This is flaky - keep running it until it succeeds
-      # The source for this is located at https://github.com/codefresh-contrib/golang-sample-app
-
