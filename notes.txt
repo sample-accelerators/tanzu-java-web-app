@@ -1,4 +1,0 @@
-with default configuration, not including skips_local_docker usually results in pending.
-
-applied workload and saw that it was using tilt image. also got the error that bundlerepository had been modified.
--> maybe this means that if the tilt image is on there, kontinue fails?
