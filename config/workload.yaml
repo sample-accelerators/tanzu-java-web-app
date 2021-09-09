@@ -1,11 +1,12 @@
-apiVersion: kontinue.io/v1alpha1
+apiVersion: carto.run/v1alpha1
 kind: Workload
 metadata:
   name: sample-app-java
   labels:
     app.tanzu.vmware.com/workload-type: web
-  run-image: harbor-repo.vmware.com/tanzu_desktop/sample-app-java
 spec:
+  params:
+    - name: run-image
+      value: harbor-repo.vmware.com/tanzu_desktop/sample-app-java
   source:
-    imgpkgBundle:
-      image: harbor-repo.vmware.com/tanzu_desktop/sample-app-java-source
+    image: harbor-repo.vmware.com/tanzu_desktop/sample-app-java-source
