@@ -1,0 +1,35 @@
+accelerator:
+  displayName: Tanzu Java Web App
+  description: A sample Spring Boot web application built with Tanzu supply-chain
+  iconUrl: https://github.com/sample-accelerators/icons/raw/master/icon-boot.png
+  tags:
+  - java
+  - spring
+  - web
+  - tanzu
+
+  options:
+  - name: repositoryPrefix
+    inputType: text
+    label: Prefix for the container image repository
+    defaultValue: dev.local
+    required: true
+
+engine:
+  merge:
+  - include: [ "**/*" ]
+    exclude: [ "config/*.yaml", "Tiltfile", "README.md" ]
+  - include: [ "config/*.yaml", "Tiltfile" ]
+    chain:
+    - type: ReplaceText
+      substitutions:
+      - text: sample-app-java
+        with: "#artifactId"
+      - text: harbor-repo.vmware.com/tanzu_desktop
+        with: "#repositoryPrefix"
+  - include: [ "README.md" ]
+    chain:
+    - type: ReplaceText
+      substitutions:
+      - text: tanzu-java-web-app
+        with: "#artifactId"
