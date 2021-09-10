@@ -25,6 +25,8 @@ engine:
       substitutions:
       - text: sample-app-java
         with: "#artifactId"
+    - type: ReplaceText
+      substitutions:
       - text: harbor-repo.vmware.com/tanzu_desktop
         with: "#repositoryPrefix"
   - include: [ "README.md" ]
