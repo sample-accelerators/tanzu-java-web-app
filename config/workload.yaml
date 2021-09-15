@@ -4,9 +4,10 @@ metadata:
   name: sample-app-java
   labels:
     app.tanzu.vmware.com/workload-type: web
+    app.kubernetes.io/part-of: sample-app-java
 spec:
-  params:
-    - name: run-image
-      value: harbor-repo.vmware.com/tanzu_desktop/sample-app-java
   source:
-    image: harbor-repo.vmware.com/tanzu_desktop/sample-app-java-source
+    git:
+      url: https://github.com/sample-accelerators/tanzu-java-web-app
+      ref:
+        branch: main
