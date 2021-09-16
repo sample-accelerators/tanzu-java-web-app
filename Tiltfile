@@ -1,4 +1,5 @@
-custom_build('harbor-repo.vmware.com/tanzu_desktop/sample-app-java', 
+custom_build(
+  os.getenv("TILT_IMG", default='harbor-repo.vmware.com/tanzu_desktop/sample-app-java'),
   'tanzu apps workload apply -f config/workload.yaml --local-path=. --yes && \
     while [[ $(kubectl get ksvc sample-app-java -o \'jsonpath={..status.conditions[?(@.type=="Ready")].status}\') != "True" ]]; do echo "waiting for ksvc" && sleep 10; done',
   ['pom.xml', './target/classes'],
