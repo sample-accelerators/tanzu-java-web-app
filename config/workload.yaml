@@ -3,8 +3,8 @@ kind: Workload
 metadata:
   name: sample-app-java
   labels:
-    app.tanzu.vmware.com/workload-type: web
-    app.kubernetes.io/part-of: sample-app-java
+    apps.tanzu.vmware.com/workload-type: web
+    apps.kubernetes.io/part-of: sample-app-java
 spec:
   params:
     - name: run-image
