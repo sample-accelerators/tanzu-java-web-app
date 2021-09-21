@@ -1,7 +1,7 @@
 load('.tanzu/tanzu_tilt_extensions.py', 'tanzu_k8s_yaml')
 
 custom_build('harbor-repo.vmware.com/tanzu_desktop/sample-app-java', 
-    "tanzu apps workload apply -f config/workload.yaml --live-update --local-path=. --source-image=harbor-repo.vmware.com/tanzu_desktop/sample-app-java-souce --yes && \
+    "tanzu apps workload apply -f config/workload.yaml --live-update --local-path=. --yes && \
     .tanzu/wait.sh sample-app-java",
   ['pom.xml', './target/classes'],
   live_update = [
