@@ -1,6 +1,6 @@
 load('.tanzu/tanzu_tilt_extensions.py', 'tanzu_k8s_yaml')
 
-SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='harbor-repo.vmware.com/tanzu_desktop/sample-app-java')
+SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='harbor-repo.vmware.com/tanzu_desktop/sample-app-java-source')
 
 custom_build('harbor-repo.vmware.com/tanzu_desktop/sample-app-java',
     "tanzu apps workload apply -f config/workload.yaml --live-update --local-path . --source-image " + SOURCE_IMAGE + " --yes && \
