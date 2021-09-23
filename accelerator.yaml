@@ -27,7 +27,7 @@ engine:
         with: "#artifactId"
     - type: ReplaceText
       substitutions:
-      - text: harbor-repo.vmware.com/tanzu_desktop
+      - text: your-registry.io/project
         with: "#repositoryPrefix"
   - include: [ "README.md" ]
     chain:
