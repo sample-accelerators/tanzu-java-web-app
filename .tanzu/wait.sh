@@ -1,4 +1,4 @@
-#!/bin/bash -ex
+#!/bin/bash -e
 
 workloadName=$1
 imageRef=$(kubectl get workload ${workloadName} -o=jsonpath='{.spec.source.image}')
