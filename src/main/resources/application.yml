@@ -7,8 +7,5 @@ management:
       exposure:
         include: "*"  
   endpoint:
-    env:
-      post:
-        enabled: true
     health:
       show-details: always
