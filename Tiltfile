@@ -1,5 +1,6 @@
 load('.tanzu/tanzu_tilt_extensions.py', 'tanzu_k8s_yaml')
-
+load('ext://min_tilt_version', 'min_tilt_version')
+min_tilt_version('0.22.6')
 
 SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='your-registry.io/project/sample-app-java-source')
 LOCAL_PATH = os.getenv("LOCAL_PATH", default='.')
