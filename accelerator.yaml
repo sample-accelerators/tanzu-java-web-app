@@ -23,7 +23,7 @@ engine:
     chain:
     - type: ReplaceText
       substitutions:
-      - text: sample-app-java
+      - text: tanzu-java-web-app
         with: "#artifactId"
     - type: ReplaceText
       substitutions:
