@@ -1,4 +1,4 @@
-SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='your-registry.io/project/tanzu-java-web-app-source')
+SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='harbor-repo.vmware.com/tanzu_desktop/tanzu-java-web-app-source')
 LOCAL_PATH = os.getenv("LOCAL_PATH", default='.')
 
 k8s_custom_deploy(
@@ -7,7 +7,7 @@ k8s_custom_deploy(
               "&& kubectl get workload tanzu-java-web-app -o yaml",
     delete_cmd="tanzu apps workload delete -f config/workload.yaml --yes",
     deps=['pom.xml', './target/classes'],
-    image_selector='your-registry.io/project/tanzu-java-web-app',
+    image_selector='harbor-repo.vmware.com/tanzu_desktop/tanzu-java-web-app',
     live_update=[
       sync('./target/classes', '/workspace/BOOT-INF/classes')
     ]
