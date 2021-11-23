@@ -18,7 +18,7 @@ accelerator:
 engine:
   merge:
   - include: [ "**/*" ]
-    exclude: [ "config/*.yaml", "Tiltfile", "README.md", "catalog/*.yaml" ]
+    exclude: [ "config/*.yaml", "Tiltfile", "README.md" ]
   - include: [ "config/*.yaml", "Tiltfile" ]
     chain:
     - type: ReplaceText
@@ -35,11 +35,3 @@ engine:
       substitutions:
       - text: tanzu-java-web-app
         with: "#artifactId"
-  - include: [ "catalog/*.yaml" ]
-    chain:
-    - type: ReplaceText
-      substitutions:
-      - text: tanzu-java-web-app
-        with: "#artifactId"
-    - type: RewritePath
-      rewriteTo: "#filename"
