@@ -12,7 +12,7 @@ k8s_custom_deploy(
               "&& kubectl get workload tanzu-java-web-app --namespace " + NAMESPACE + " -o yaml",
     delete_cmd="tanzu apps workload delete -f config/workload.yaml --namespace " + NAMESPACE + " --yes",
     deps=['pom.xml', './target/classes'],
-    image_selector='your-registry.io/project/tanzu-java-web-app-' + NAMESPACE,
+    container_selector='workload',
     live_update=[
       sync('./target/classes', '/workspace/BOOT-INF/classes')
     ]
