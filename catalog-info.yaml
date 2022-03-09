@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: tanzu-java-web-app
+  annotations:
+    github.com/project-slug: mikenelsonjr/tanzu-java-web-app
+spec:
+  type: other
+  lifecycle: unknown
+  owner: mikenelsonjr
