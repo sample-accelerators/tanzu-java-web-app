@@ -51,10 +51,10 @@ engine:
     - type: ReplaceText
       substitutions:
       - text: "'default'"
-        with: "'#developerNamespace'"
+        with: "'\'' + #developerNamespace '\''"
     - type: ReplaceText
       substitutions:
-      - text: https://github.com/sample-accelerators/tanzu-java-web-app
+      - text: https://github.com/sample-accelerators/#artifactId
         with: "#codeRepositoryUrl"
   - include: [ "README.md" ]
     chain:
