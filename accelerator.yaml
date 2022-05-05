@@ -54,7 +54,7 @@ engine:
         with: "'''' + #developerNamespace + ''''"
     - type: ReplaceText
       substitutions:
-      - text: https://github.com/sample-accelerators/#artifactId
+      - text: "'https://github.com/sample-accelerators/' + #artifactId"
         with: "#codeRepositoryUrl"
   - include: [ "README.md" ]
     chain:
