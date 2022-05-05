@@ -38,6 +38,10 @@ engine:
     chain:
     - type: ReplaceText
       substitutions:
+      - text: https://github.com/sample-accelerators/tanzu-java-web-app
+        with: "#codeRepositoryUrl"
+    - type: ReplaceText
+      substitutions:
       - text: tanzu-java-web-app
         with: "#artifactId"
     - type: ReplaceText
@@ -52,10 +56,6 @@ engine:
       substitutions:
       - text: "'default'"
         with: "'''' + #developerNamespace + ''''"
-    - type: ReplaceText
-      substitutions:
-      - text: "'https://github.com/sample-accelerators/' + #artifactId"
-        with: "#codeRepositoryUrl"
   - include: [ "README.md" ]
     chain:
     - type: ReplaceText
