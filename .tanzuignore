@@ -1,4 +1,8 @@
-### Tilt
+### Git ###
+.git/
+.github/
+
+### Tilt ###
 Tiltfile
 
 ### VS Code ###
