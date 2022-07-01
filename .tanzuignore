@@ -1,0 +1,14 @@
+### Git ###
+.git/
+.github/
+
+### Tilt ###
+Tiltfile
+
+### VS Code ###
+.vscode/
+*.code-workspace
+
+### IntelliJ IDEA ###
+.idea/
+out/
