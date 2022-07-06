@@ -14,6 +14,21 @@ accelerator:
     label: Prefix for the container image repository
     defaultValue: dev.local
     required: true
+  - name: iterateClusterContext
+    inputType: text
+    label: Allowed Kubernetes context for iterative development
+    defaultValue: kind-cluster
+    required: true
+  - name: developerNamespace
+    inputType: text
+    label: Developer namespace on Kubernetes cluster
+    defaultValue: default
+    required: true
+  - name: codeRepositoryUrl
+    inputType: text
+    label: Eventual git repository origin
+    defaultValue: https://github.com/sample-accelerators/tanzu-java-web-app
+    required: true
 
 engine:
   merge:
@@ -23,12 +38,24 @@ engine:
     chain:
     - type: ReplaceText
       substitutions:
+      - text: https://github.com/sample-accelerators/tanzu-java-web-app
+        with: "#codeRepositoryUrl"
+    - type: ReplaceText
+      substitutions:
       - text: tanzu-java-web-app
         with: "#artifactId"
     - type: ReplaceText
       substitutions:
       - text: your-registry.io/project
         with: "#repositoryPrefix"
+    - type: ReplaceText
+      substitutions:
+      - text: kind-cluster
+        with: "#iterateClusterContext"
+    - type: ReplaceText
+      substitutions:
+      - text: "'default'"
+        with: "'''' + #developerNamespace + ''''"
   - include: [ "README.md" ]
     chain:
     - type: ReplaceText
